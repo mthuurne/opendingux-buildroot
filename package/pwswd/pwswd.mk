@@ -8,7 +8,7 @@ PWSWD_SITE = git://github.com/Ayla-/pwswd.git
 PWSWD_DEPENDENCIES = alsa-lib libpng
 
 define PWSWD_BUILD_CMDS
-	$(MAKE) CC="$(TARGET_CC)" STRIP="$(TARGET_CROSS)strip" INCLUDES="" -C $(@D) all
+	$(MAKE) CROSS="$(TARGET_CROSS)" -C $(@D)
 endef
 
 define PWSWD_INSTALL_TARGET_CMDS
