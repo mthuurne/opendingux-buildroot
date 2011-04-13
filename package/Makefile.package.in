@@ -107,7 +107,7 @@ define DOWNLOAD_GIT
 	(pushd $(DL_DIR) > /dev/null && \
 	$(GIT) clone $($(PKG)_SITE) $($(PKG)_BASE_NAME) && \
 	pushd $($(PKG)_BASE_NAME) > /dev/null && \
-	$(GIT) archive --format=tar --prefix=$($(PKG)_BASE_NAME)/ $($(PKG)_DL_VERSION) | \
+	$(GIT) archive --format=tar --prefix=$($(PKG)_BASE_NAME)/ origin/$($(PKG)_DL_VERSION) | \
 		gzip -c > $(DL_DIR)/$($(PKG)_SOURCE) && \
 	popd > /dev/null && \
 	rm -rf $($(PKG)_DL_DIR) && \
