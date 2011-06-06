@@ -1,0 +1,28 @@
+--- alsa-utils-1.0.22.org/alsamixer/utils.c	2009-12-16 16:18:52.000000000 +0100
++++ alsa-utils-1.0.22/alsamixer/utils.c	2011-06-06 02:02:04.000000000 +0200
+@@ -24,6 +24,25 @@
+ #include <wchar.h>
+ #include "utils.h"
+ 
++#ifndef _WINT_T
++/* Fake just enough wchar support to make alsamixer work. */
++
++typedef unsigned int wchar_t;
++
++static int mbtowc(wchar_t *pwc, const char *s, size_t n) {
++	if (!s) return 0;
++	if (n == 0) return -1;
++	char c = *s;
++	if (c == '\0') return 0;
++	if (pwc) *pwc = c;
++	return 1;
++}
++
++static int wcwidth(wchar_t c) {
++	return c == '\0' ? 0 : 1;
++}
++#endif
++
+ /*
+  * mbs_at_width - compute screen position in a string
+  *
