@@ -1,0 +1,8 @@
+config BR2_PACKAGE_LIBAO
+	bool "libao"
+	help
+	  Cross-platform library for audio output.
+
+	  The simple API of libao allows samples to be pushed (blocking writes),
+	  as opposed to the pull (callback) nature of SDL's sound API. This can
+	  simplify the porting of some applications significantly.
