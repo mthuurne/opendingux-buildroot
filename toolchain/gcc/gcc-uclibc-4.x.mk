@@ -53,6 +53,11 @@ else
 GCC_OPTSPACE=--enable-target-optspace
 endif
 
+# gcc 4.6.x quadmath requires wchar
+ifneq ($(BR2_TOOLCHAIN_BUILDROOT_WCHAR),y)
+GCC_QUADMATH=--disable-libquadmath
+endif
+
 GCC_TARGET_PREREQ=
 GCC_STAGING_PREREQ=
 
@@ -110,7 +115,14 @@ GCC_WITH_HOST_GMP=--with-gmp=$(GMP_HOST_DIR)
 GCC_WITH_HOST_MPFR=--with-mpfr=$(MPFR_HOST_DIR)
 HOST_SOURCE += host-libgmp-source host-libmpfr-source
 
+# GCC 4.5.x prerequisites
 ifeq ($(findstring x4.5.,x$(GCC_VERSION)),x4.5.)
+GCC_WITH_HOST_MPC=--with-mpc=$(MPC_HOST_DIR)
+HOST_SOURCE += host-libmpc-source
+endif
+
+# GCC 4.6.x prerequisites
+ifeq ($(findstring x4.6.,x$(GCC_VERSION)),x4.6.)
 GCC_WITH_HOST_MPC=--with-mpc=$(MPC_HOST_DIR)
 HOST_SOURCE += host-libmpc-source
 endif
@@ -215,6 +227,7 @@ $(GCC_BUILD_DIR1)/.configured: $(GCC_DIR)/.patched
 		$(BR2_CONFIGURE_DEVEL_SYSROOT) \
 		--disable-__cxa_atexit \
 		$(GCC_OPTSPACE) \
+		$(GCC_QUADMATH) \
 		--with-gnu-ld \
 		--disable-shared \
 		--disable-libssp \
@@ -293,6 +306,7 @@ $(GCC_BUILD_DIR2)/.configured: $(GCC_DIR)/.patched
 		$(BR2_CONFIGURE_DEVEL_SYSROOT) \
 		--disable-__cxa_atexit \
 		$(GCC_OPTSPACE) \
+		$(GCC_QUADMATH) \
 		--with-gnu-ld \
 		--enable-shared \
 		--disable-libssp \
@@ -370,6 +384,7 @@ $(GCC_BUILD_DIR3)/.configured: $(GCC_SRC_DIR)/.patched $(GCC_STAGING_PREREQ)
 		$(BR2_CONFIGURE_BUILD_TOOLS) \
 		--disable-__cxa_atexit \
 		$(GCC_OPTSPACE) \
+		$(GCC_QUADMATH) \
 		--with-gnu-ld \
 		--disable-libssp \
 		--disable-multilib \
@@ -504,6 +519,8 @@ $(GCC_BUILD_DIR4)/.configured: $(GCC_BUILD_DIR4)/.prepared
 		--enable-languages=$(GCC_TARGET_LANGUAGES) \
 		--with-gxx-include-dir=/usr/include/c++ \
 		--disable-__cxa_atexit \
+		$(GCC_OPTSPACE) \
+		$(GCC_QUADMATH) \
 		--with-gnu-ld \
 		--disable-libssp \
 		--disable-multilib \

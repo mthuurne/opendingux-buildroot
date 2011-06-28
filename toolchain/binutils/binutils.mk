@@ -36,6 +36,9 @@ endif
 ifeq ($(findstring x4.5.,x$(GCC_VERSION)),x4.5.)
 BINUTILS_ADD_MPC = y
 endif
+ifeq ($(findstring x4.6.,x$(GCC_VERSION)),x4.6.)
+BINUTILS_ADD_MPC = y
+endif
 
 ifeq ($(BINUTILS_ADD_MPC),y)
 BINUTILS_HOST_PREREQ += $(TOOLCHAIN_DIR)/mpc/lib/libmpc$(HOST_LIBEXT)
