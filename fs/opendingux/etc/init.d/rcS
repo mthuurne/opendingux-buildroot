@@ -1,10 +1,11 @@
 #!/bin/sh
 
 
-# Start all init scripts in /etc/init.d
+# Start all init scripts in /etc/init.d,
 # executing them in numerical order.
+# After that, do the same for /etc/local/init.d.
 #
-for i in /etc/init.d/S??* ;do
+for i in /etc/init.d/S??* /etc/local/init.d/S??* ;do
 
      # Ignore dangling symlinks (if any).
      [ ! -f "$i" ] && continue

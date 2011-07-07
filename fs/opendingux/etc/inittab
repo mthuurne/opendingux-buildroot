@@ -14,26 +14,41 @@
 # process   == program to run
 
 # Startup the system
-null::sysinit:/bin/mount -o remount,rw /
-null::sysinit:/bin/mount -t proc proc /proc
-null::sysinit:/bin/mkdir -p /dev/pts
-null::sysinit:/bin/mount -a
-null::sysinit:/bin/hostname -F /etc/hostname
+::sysinit:/bin/mount -t proc proc /proc
+::sysinit:/bin/mount -t sysfs sysfs /sys
+::sysinit:/bin/mount -o size=64k,mode=0755 -t tmpfs tmpfs /dev
+::sysinit:/bin/mkdir -p /dev/pts
+::sysinit:/bin/mount -o mode=0620 -t devpts devpts /dev/pts
+::sysinit:/bin/mount -t tmpfs tmpfs /tmp
+::sysinit:/bin/mount -o size=64k,mode=0755 -t tmpfs tmpfs /media
+::sysinit:/bin/mount -a
+::sysinit:/bin/mount -o remount,rw,noatime,nodiratime /boot
+
+# Logging junk
+::sysinit:/bin/touch /var/log/messages
+::respawn:/sbin/syslogd -n -m 0
+::respawn:/sbin/klogd -n
+
+::sysinit:/bin/hostname -F /etc/hostname
+
+# Start mdev
+::sysinit:/bin/echo /sbin/mdev > /proc/sys/kernel/hotplug
+
+# Miscellaneous daemons
+# TODO: Start via init.d instead?
+::sysinit:/usr/sbin/inetd
+#::sysinit:/usr/sbin/udhcpd /etc/udhcpd.conf
+
+::sysinit:/sbin/mdev -s
+
 # now run any rc scripts
 ::sysinit:/etc/init.d/rcS
 
-# Set up a couple of getty's
-tty1::respawn:/sbin/getty 38400 tty1
-tty2::respawn:/sbin/getty 38400 tty2
-
 # Put a getty on the serial port
-#ttyS0::respawn:/sbin/getty -L ttyS0 115200 vt100 # GENERIC_SERIAL
+ttyS0::respawn:/sbin/getty -L ttyS0 57600 vt100
 
-# Logging junk
-null::sysinit:/bin/touch /var/log/messages
-null::respawn:/sbin/syslogd -n -m 0
-null::respawn:/sbin/klogd -n
-tty3::respawn:/usr/bin/tail -f /var/log/messages
+# Launch the main application
+tty1::respawn:/usr/local/sbin/main
 
 # Stuff to do for the 3-finger salute
 ::ctrlaltdel:/sbin/reboot
@@ -43,4 +58,3 @@ null::shutdown:/usr/bin/killall klogd
 null::shutdown:/usr/bin/killall syslogd
 null::shutdown:/bin/umount -a -r
 null::shutdown:/sbin/swapoff -a
-
