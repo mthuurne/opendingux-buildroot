@@ -47,6 +47,9 @@
 # Put a getty on the serial port
 ttyS0::respawn:/sbin/getty -L ttyS0 57600 vt100
 
+# Disable the framebuffer console
+::sysinit:echo 0 > /sys/devices/virtual/vtconsole/vtcon1/bind
+
 # Launch the main application
 tty1::respawn:/usr/sbin/frontend_start
 
