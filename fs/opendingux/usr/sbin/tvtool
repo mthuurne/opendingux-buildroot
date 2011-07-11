@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "$1" = "--on" ]; then
+echo 0 > /sys/class/backlight/pwm-backlight/brightness
+amixer set Speaker off
+if [ -f /etc/local/tvout ]; then
+/usr/sbin/tvout --`cat /etc/local/tvout`
+else
+/usr/sbin/tvout --pal
+fi
+elif [ "$1" = "--off" ]; then
+/usr/sbin/tvout --off
+echo 100 > /sys/class/backlight/pwm-backlight/brightness
+amixer set Speaker on
+fi
