@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export HOME=`cat /etc/passwd |head -1 |cut -d':' -f 6`
+
+if [ -f /usr/local/sbin/frontend_start ]; then
+	. /usr/local/sbin/frontend_start
+else
+	/usr/bin/gmenu2x > /var/log/gmenu2x.log 2>&1
+fi
+
