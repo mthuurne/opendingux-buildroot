@@ -202,7 +202,6 @@ source "package/usbmount/Config.in"
 source "package/usbutils/Config.in"
 source "package/wipe/Config.in"
 source "package/xfsprogs/Config.in"
-source "package/yawn/Config.in"
 endmenu
 
 menu "Interpreter languages and scripting"
