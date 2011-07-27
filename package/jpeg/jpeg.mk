@@ -3,12 +3,13 @@
 # jpeg (libraries needed by some apps)
 #
 #############################################################
-JPEG_VERSION = 8c
-JPEG_SITE = http://www.ijg.org/files/
+JPEG_VERSION = 6b
+JPEG_SITE = http://mthuurne.github.com/opendingux-buildroot/distfiles/
 JPEG_SOURCE = jpegsrc.v$(JPEG_VERSION).tar.gz
 JPEG_INSTALL_STAGING = YES
 JPEG_INSTALL_TARGET = YES
-JPEG_CONF_OPT = --program-prefix=
+JPEG_LIBTOOL_PATCH = NO
+JPEG_CONF_OPT = --without-x --enable-shared --enable-static
 
 define JPEG_REMOVE_USELESS_TOOLS
 	rm -f $(addprefix $(TARGET_DIR)/usr/bin/,cjpeg djpeg jpegtrans rdjpgcom wrjpgcom)
