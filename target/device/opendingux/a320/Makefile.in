@@ -1,0 +1,3 @@
+BOARD_PATH=target/device/opendingux/a320
+
+TARGET_SKELETON=$(BOARD_PATH)/target_skeleton
