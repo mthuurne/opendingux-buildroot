@@ -1,0 +1,25 @@
+menuconfig BR2_TARGET_OPENDINGUX
+	bool "OpenDingux"
+	help
+	  A Linux distro for handheld game/media players.
+
+	  If the target devices that you want to select does not appear, please
+	  select the right architecture and subarchitecture first.
+
+if BR2_TARGET_OPENDINGUX
+
+choice
+	prompt "Target device"
+	default BR2_TARGET_OPENDINGUX_A320
+	help
+	  Selects the device to build OpenDingux for.
+
+config BR2_TARGET_OPENDINGUX_A320
+	bool "Dingoo A320/A330"
+	depends on BR2_mipsel && BR2_mips_32
+	help
+	  OpenDingux on the Dingoo Digital A320 and Dingoo Technology A330.
+
+endchoice
+
+endif

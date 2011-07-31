@@ -1,0 +1,7 @@
+ifeq ($(BR2_TARGET_OPENDINGUX),y)
+
+ifeq ($(BR2_TARGET_OPENDINGUX_A320),y)
+include target/device/opendingux/a320/Makefile.in
+endif
+
+endif
