@@ -33,12 +33,6 @@
 
 # Start mdev
 ::sysinit:/bin/echo /sbin/mdev > /proc/sys/kernel/hotplug
-
-# Miscellaneous daemons
-# TODO: Start via init.d instead?
-::sysinit:/usr/sbin/inetd
-#::sysinit:/usr/sbin/udhcpd /etc/udhcpd.conf
-
 ::sysinit:/sbin/mdev -s
 
 # now run any rc scripts
