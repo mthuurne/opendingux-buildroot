@@ -14,7 +14,7 @@ LIBAO_INSTALL_TARGET = YES
 LIBAO_CONF_OPT = --disable-esd
 LIBAO_DEPENDENCIES =
 ifeq ($(BR2_PACKAGE_ALSA_LIB_PCM),y)
-LIBAO_CONF_OPT += --enable-alsa
+LIBAO_CONF_OPT += --enable-alsa --enable-alsa-mmap
 LIBAO_DEPENDENCIES += alsa-lib
 else
 LIBAO_CONF_OPT += --disable-alsa
