@@ -15,9 +15,9 @@ LIBAO_CONF_OPT = --disable-esd
 LIBAO_DEPENDENCIES =
 ifeq ($(BR2_PACKAGE_ALSA_LIB_PCM),y)
 LIBAO_CONF_OPT += --enable-alsa
+LIBAO_DEPENDENCIES += alsa-lib
 else
 LIBAO_CONF_OPT += --disable-alsa
-LIBAO_DEPENDENCIES += alsa-lib
 endif
 
 $(eval $(call AUTOTARGETS,package/multimedia,libao))
