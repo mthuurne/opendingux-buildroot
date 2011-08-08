@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00070-gd0f1dab-dirty
-# Mon Aug  8 22:06:17 2011
+# Buildroot version: 2010.11-00074-gc69ac03-dirty
+# Tue Aug  9 01:24:17 2011
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -261,6 +261,7 @@ BR2_PACKAGE_LIBAO=y
 # BR2_PACKAGE_LIBDVDNAV is not set
 BR2_PACKAGE_LIBID3TAG=y
 BR2_PACKAGE_LIBMAD=y
+BR2_PACKAGE_LIBMIKMOD=y
 
 #
 # libmms requires a toolchain with WCHAR support
