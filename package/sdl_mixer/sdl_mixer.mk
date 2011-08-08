@@ -13,7 +13,6 @@ SDL_MIXER_DEPENDENCIES = sdl timidity-instruments
 SDL_MIXER_CONF_OPT = \
 	--without-x \
 	--with-sdl-prefix=$(STAGING_DIR)/usr \
-	--disable-music-mod \
 	--disable-music-mp3 \
 	--disable-music-flac # configure script fails when cross compiling
 
@@ -25,6 +24,13 @@ SDL_MIXER_CONF_OPT += \
 	--disable-music-native-midi-gpl
 else
 SDL_MIXER_CONF_OPT += --disable-music-midi
+endif
+
+ifeq ($(BR2_PACKAGE_LIBMIKMOD),y)
+SDL_MIXER_CONF_OPT += --enable-music-mod --enable-music-libmikmod
+SDL_MIXER_DEPENDENCIES += libmikmod
+else
+SDL_MIXER_CONF_OPT += --disable-music-mod
 endif
 
 ifeq ($(BR2_PACKAGE_LIBMAD),y)
