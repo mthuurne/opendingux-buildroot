@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00057-gdbae8cf-dirty
-# Thu Jul 28 00:15:54 2011
+# Buildroot version: 2010.11-00070-gd0f1dab-dirty
+# Mon Aug  8 22:06:17 2011
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -285,6 +285,7 @@ BR2_PACKAGE_SPEEX=y
 #
 # BR2_PACKAGE_FESTIVAL is not set
 BR2_PACKAGE_TAGLIB=y
+BR2_PACKAGE_TIMIDITY_INSTRUMENTS=y
 BR2_PACKAGE_TREMOR=y
 
 #
