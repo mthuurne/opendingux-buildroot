@@ -1,0 +1,15 @@
+config BR2_PACKAGE_EVAS
+	bool "evas"
+	select BR2_PACKAGE_FREETYPE
+	select BR2_PACKAGE_EINA
+	help
+	  EVAS EFL library
+
+if BR2_PACKAGE_EVAS
+
+config BR2_PACKAGE_EVAS_EXAMPLES
+	bool "evas examples"
+	help
+	  EVAS EFL library exmaples
+
+endif
