@@ -8,6 +8,7 @@ menuconfig BR2_PACKAGE_EFL
 if BR2_PACKAGE_EFL
 
 	source "package/efl/eina/Config.in"
+	source "package/efl/evas/Config.in"
 
 endif
 
