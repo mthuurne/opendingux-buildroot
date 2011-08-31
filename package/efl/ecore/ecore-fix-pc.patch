@@ -1,0 +1,13 @@
+diff --git a/ecore.pc.in b/ecore.pc.in
+index 65c5a11..950a96b 100644
+--- a/ecore.pc.in
++++ b/ecore.pc.in
+@@ -7,6 +7,6 @@ Name: ecore
+ Description: Ecore event abstraction library
+ @pkgconfig_requires_private@: @requirements_ecore@
+ Version: @VERSION@
+-Libs: -L${libdir} -lecore @EINA_LIBS@
++Libs: -L${libdir} -lecore
+ Libs.private: -lm
+-Cflags: -I${includedir}/ecore-@VMAJ@ @EINA_CFLAGS@
++Cflags: -I${includedir}/ecore-@VMAJ@
