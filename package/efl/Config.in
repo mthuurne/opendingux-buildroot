@@ -9,6 +9,7 @@ if BR2_PACKAGE_EFL
 
 	source "package/efl/eina/Config.in"
 	source "package/efl/evas/Config.in"
+	source "package/efl/ecore/Config.in"
 
 endif
 
