@@ -1,0 +1,5 @@
+config BR2_PACKAGE_EMBRYO
+	bool "embryo"
+	select BR2_PACKAGE_EINA
+	help
+	  EMBRYO EFL library

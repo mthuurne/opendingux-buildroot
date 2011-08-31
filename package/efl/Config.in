@@ -11,6 +11,7 @@ if BR2_PACKAGE_EFL
 	source "package/efl/evas/Config.in"
 	source "package/efl/ecore/Config.in"
 	source "package/efl/eet/Config.in"
+	source "package/efl/embryo/Config.in"
 
 endif
 
