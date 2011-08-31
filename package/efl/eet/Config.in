@@ -1,0 +1,25 @@
+config BR2_PACKAGE_EET
+	bool "eet"
+	select BR2_PACKAGE_ZLIB
+	select BR2_PACKAGE_EINA
+	help
+	  EET EFL library
+
+if BR2_PACKAGE_EET
+
+config BR2_PACKAGE_EET_TESTS
+	bool "eet tests"
+	help
+	   EET EFL library enable tests
+
+config BR2_PACKAGE_EET_EXAMPLES
+	bool "eet examples"
+	help
+	   EET EFL library enable building examples
+
+config BR2_PACKAGE_EET_COVERAGE
+	bool "eet coverage"
+	help
+	   EET EFL library enable coverage profiling instrumentation
+
+endif
