@@ -1,0 +1,23 @@
+config BR2_PACKAGE_EINA
+	bool "eina"
+	help
+	  EINA EFL library
+
+if BR2_PACKAGE_EINA
+
+config BR2_PACKAGE_EINA_TESTS
+	bool "eina tests"
+	help
+	   Enable EINA tests
+
+config BR2_PACKAGE_EINA_COVERAGE
+	bool "eina coverage"
+	help
+	   Enable EINA coverage profiling instrumentation
+
+config BR2_PACKAGE_EINA_BENCHMARK
+	bool "eina benchmark"
+	help
+	   Enable EINA benchmarking
+
+endif

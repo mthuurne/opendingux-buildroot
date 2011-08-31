@@ -1,0 +1,13 @@
+menuconfig BR2_PACKAGE_EFL
+	bool "Enlightenment Fundation Libraries (EFL)"
+	help
+	  Support for EFL libraries.
+
+	  http://www.enlightenment.org/
+
+if BR2_PACKAGE_EFL
+
+	source "package/efl/eina/Config.in"
+
+endif
+
