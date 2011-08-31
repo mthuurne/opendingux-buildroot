@@ -1,0 +1,13 @@
+diff --git a/evas.pc.in b/evas.pc.in
+index 47ccdd8..5db9f7b 100644
+--- a/evas.pc.in
++++ b/evas.pc.in
+@@ -7,6 +7,6 @@ Name: evas
+ Description: Evas canvas display library
+ @pkgconfig_requires_private@: @requirement_evas@
+ Version: @VERSION@
+-Libs: -L${libdir} -levas @EINA_LIBS@ @shm_open_libs@
++Libs: -L${libdir} -levas @shm_open_libs@
+ Libs.private: @EFL_FNMATCH_LIBS@ @pthread_libs@
+-Cflags: -I${includedir}/evas-@VMAJ@ @EINA_CFLAGS@
++Cflags: -I${includedir}/evas-@VMAJ@
