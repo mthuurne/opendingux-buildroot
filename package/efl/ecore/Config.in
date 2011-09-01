@@ -1,0 +1,15 @@
+config BR2_PACKAGE_ECORE
+	bool "ecore"
+	select BR2_PACKAGE_EINA
+	select BR2_PACKAGE_EVAS
+	help
+	  ECORE EFL library
+
+if BR2_PACKAGE_ECORE
+
+config BR2_PACKAGE_ECORE_ENABLE-G-MAIN-LOOP
+	bool "enable g-main-loop"
+	help
+	   Enable ecore_main_loop based on g_main_loop
+
+endif
