@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00074-gc69ac03-dirty
-# Tue Aug  9 01:24:17 2011
+# Buildroot version: 2010.11-00090-ga542333
+# Mon Sep  5 00:15:18 2011
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -71,7 +71,7 @@ BR2_GIT="git"
 BR2_ZCAT="gzip -d -c"
 BR2_BZCAT="bzcat"
 BR2_TAR_OPTIONS=""
-BR2_DL_DIR="/tmp"
+BR2_DL_DIR="$(BASE_DIR)/downloads"
 BR2_STAGING_DIR="$(BASE_DIR)/staging"
 
 #
@@ -401,6 +401,7 @@ BR2_PACKAGE_SDL_GFX=y
 # other GUIs
 #
 # BR2_PACKAGE_QT is not set
+# BR2_PACKAGE_EFL is not set
 
 #
 # X.org requires a toolchain with WCHAR support
