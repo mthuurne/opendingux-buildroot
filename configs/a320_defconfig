@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00001-g7dd9da3
-# Wed Sep  7 15:49:22 2011
+# Buildroot version: 2010.11-00002-gdf1fb91
+# Wed Sep  7 18:37:52 2011
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -618,7 +618,7 @@ BR2_PACKAGE_LIBUNGIF=y
 # pango requires a toolchain with WCHAR and C++ support
 #
 # BR2_PACKAGE_PIXMAN is not set
-BR2_PACKAGE_TIFF=y
+# BR2_PACKAGE_TIFF is not set
 
 #
 # webkit requires C++, WCHAR in toolchain and libgtk2
