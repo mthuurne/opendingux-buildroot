@@ -27,7 +27,9 @@ SDL_MIXER_CONF_OPT += --disable-music-midi
 endif
 
 ifeq ($(BR2_PACKAGE_LIBMIKMOD),y)
-SDL_MIXER_CONF_OPT += --enable-music-mod --enable-music-libmikmod
+SDL_MIXER_CONF_OPT += \
+	--enable-music-mod --enable-music-libmikmod \
+	LIBMIKMOD_CONFIG=$(STAGING_DIR)/usr/bin/libmikmod-config
 SDL_MIXER_DEPENDENCIES += libmikmod
 else
 SDL_MIXER_CONF_OPT += --disable-music-mod
