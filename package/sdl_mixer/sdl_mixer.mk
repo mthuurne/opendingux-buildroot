@@ -28,7 +28,7 @@ endif
 
 ifeq ($(BR2_PACKAGE_LIBMIKMOD),y)
 SDL_MIXER_CONF_OPT += \
-	--enable-music-mod --enable-music-libmikmod \
+	--enable-music-mod \
 	LIBMIKMOD_CONFIG=$(STAGING_DIR)/usr/bin/libmikmod-config
 SDL_MIXER_DEPENDENCIES += libmikmod
 else
