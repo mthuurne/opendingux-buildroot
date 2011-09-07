@@ -13,4 +13,4 @@ LIBMIKMOD_CONF_OPT = --localstatedir=/var \
 LIBMIKMOD_LIBTOOL_PATCH = NO
 LIBMIKMOD_INSTALL_STAGING = YES
 
-$(eval $(call AUTOTARGETS,package,libmikmod))
+$(eval $(call AUTOTARGETS,package/multimedia,libmikmod))
