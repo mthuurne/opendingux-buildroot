@@ -23,6 +23,7 @@
 ::sysinit:/bin/mount -o size=64k,mode=0755 -t tmpfs tmpfs /media
 ::sysinit:/bin/mount -a
 ::sysinit:/bin/mount -o remount,rw,noatime,nodiratime /boot
+::sysinit:/bin/echo -n 1 > /proc/sys/vm/overcommit_memory
 
 # Logging junk
 ::sysinit:/bin/touch /var/log/messages
