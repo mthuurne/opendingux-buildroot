@@ -1,0 +1,92 @@
+diff -ru htop-0.9.org/configure htop-0.9/configure
+--- htop-0.9.org/configure	2010-11-23 17:33:53.000000000 +0100
++++ htop-0.9/configure	2011-09-19 20:10:22.000000000 +0200
+@@ -13611,11 +13611,11 @@
+ if { as_var=$as_ac_File; eval "test \"\${$as_var+set}\" = set"; }; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-  test "$cross_compiling" = yes &&
+-  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
+-echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
+-   { (exit 1); exit 1; }; }
+-if test -r "$PROCDIR/stat"; then
++if test "$cross_compiling" = yes; then
++  echo "$as_me:$LINENO: warning: cannot check for file existence when cross compiling; assuming it exists" >&5
++  echo "$as_me: warning: cannot check for file existence when cross compiling; assuming it exists" >&2
++  eval "$as_ac_File=yes"
++elif test -r "$PROCDIR/stat"; then
+   eval "$as_ac_File=yes"
+ else
+   eval "$as_ac_File=no"
+@@ -13638,11 +13638,11 @@
+ if { as_var=$as_ac_File; eval "test \"\${$as_var+set}\" = set"; }; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-  test "$cross_compiling" = yes &&
+-  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
+-echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
+-   { (exit 1); exit 1; }; }
+-if test -r "$PROCDIR/meminfo"; then
++if test "$cross_compiling" = yes; then
++  echo "$as_me:$LINENO: warning: cannot check for file existence when cross compiling; assuming it exists" >&5
++  echo "$as_me: warning: cannot check for file existence when cross compiling; assuming it exists" >&2
++  eval "$as_ac_File=yes"
++elif test -r "$PROCDIR/meminfo"; then
+   eval "$as_ac_File=yes"
+ else
+   eval "$as_ac_File=no"
+diff -ru htop-0.9.org/CRT.c htop-0.9/CRT.c
+--- htop-0.9.org/CRT.c	2010-11-23 16:56:32.000000000 +0100
++++ htop-0.9/CRT.c	2011-09-19 20:13:53.000000000 +0200
+@@ -11,7 +11,7 @@
+ #include <signal.h>
+ #include <stdlib.h>
+ #include <stdbool.h>
+-#include <execinfo.h>
++//#include <execinfo.h>
+ 
+ #include "String.h"
+ 
+@@ -118,7 +118,7 @@
+ 
+ char* CRT_termType;
+ 
+-void *backtraceArray[128];
++//void *backtraceArray[128];
+ 
+ static void CRT_handleSIGSEGV(int sgn) {
+    (void) sgn;
+@@ -128,9 +128,9 @@
+    #else
+    fprintf(stderr, "\n\nhtop " VERSION " aborting. Unsupported platform.\n");
+    #endif
+-   size_t size = backtrace(backtraceArray, sizeof(backtraceArray));
+-   fprintf(stderr, "Backtrace: \n");
+-   backtrace_symbols_fd(backtraceArray, size, 2);
++   //size_t size = backtrace(backtraceArray, sizeof(backtraceArray));
++   //fprintf(stderr, "Backtrace: \n");
++   //backtrace_symbols_fd(backtraceArray, size, 2);
+    abort();
+ }
+ 
+diff -ru htop-0.9.org/CRT.h htop-0.9/CRT.h
+--- htop-0.9.org/CRT.h	2010-11-23 16:56:32.000000000 +0100
++++ htop-0.9/CRT.h	2011-09-19 20:13:58.000000000 +0200
+@@ -14,7 +14,7 @@
+ #include <signal.h>
+ #include <stdlib.h>
+ #include <stdbool.h>
+-#include <execinfo.h>
++//#include <execinfo.h>
+ 
+ #include "String.h"
+ 
+@@ -119,7 +119,7 @@
+ 
+ char* CRT_termType;
+ 
+-void *backtraceArray[128];
++//void *backtraceArray[128];
+ 
+ // TODO: pass an instance of Settings instead.
+ 
