@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00002-gdf1fb91
-# Wed Sep  7 18:37:52 2011
+# Buildroot version: 2010.11-00005-g0cbb2d4-dirty
+# Sun Oct  2 22:31:07 2011
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -131,6 +131,7 @@ BR2_PTHREAD_DEBUG=y
 #
 # BR2_BINUTILS_VERSION_2_20 is not set
 BR2_BINUTILS_VERSION_2_20_1=y
+# BR2_BINUTILS_VERSION_2_21_1 is not set
 BR2_BINUTILS_VERSION="2.20.1"
 BR2_EXTRA_BINUTILS_CONFIG_OPTIONS=""
 
@@ -141,6 +142,7 @@ BR2_EXTRA_BINUTILS_CONFIG_OPTIONS=""
 # BR2_GCC_VERSION_4_3_X is not set
 # BR2_GCC_VERSION_4_4_X is not set
 BR2_GCC_VERSION_4_5_X=y
+# BR2_GCC_VERSION_4_6_X is not set
 # BR2_GCC_VERSION_SNAP is not set
 BR2_GCC_SUPPORTS_FINEGRAINEDMTUNE=y
 BR2_GCC_VERSION="4.5.1"
@@ -819,6 +821,7 @@ BR2_PACKAGE_LOCKFILE_PROGS=y
 #
 # System tools
 #
+BR2_PACKAGE_HTOP=y
 
 #
 # Text editors and viewers
