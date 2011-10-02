@@ -12,7 +12,11 @@ LIBTHEORA_CONF_OPT = \
 		--disable-oggtest \
 		--disable-vorbistest \
 		--disable-sdltest \
-		--disable-examples
+		--disable-examples \
+		HAVE_DOXYGEN=false HAVE_PDFLATEX=no
+# Note: There is no configure option to disable the building of the
+#       documentation, so we do it indirectly by pretending the necessary
+#       tools are not there.
 
 LIBTHEORA_DEPENDENCIES = libogg libvorbis host-pkg-config
 
