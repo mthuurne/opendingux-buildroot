@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00005-g0cbb2d4-dirty
-# Sun Oct  2 22:31:07 2011
+# Buildroot version: 2010.11-00007-g35b241f-dirty
+# Tue Oct  4 03:55:54 2011
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -253,6 +253,7 @@ BR2_PACKAGE_ALSA_UTILS_SPEAKER_TEST=y
 # BR2_PACKAGE_AUMIX is not set
 BR2_PACKAGE_FLAC=y
 # BR2_PACKAGE_FFMPEG is not set
+BR2_PACKAGE_FMTOOLS=y
 
 #
 # gstreamer requires a toolchain with WCHAR support
