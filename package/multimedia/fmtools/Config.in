@@ -1,0 +1,6 @@
+config BR2_PACKAGE_FMTOOLS
+	bool "fmtools"
+	help
+	  Command line programs to control FM radio receivers through V4L2.
+
+	  http://benpfaff.org/fmtools/
