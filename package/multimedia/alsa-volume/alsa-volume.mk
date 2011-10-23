@@ -1,6 +1,8 @@
 
 ALSA_VOLUME_DIR=$(BUILD_DIR)/alsa-volume
 
+ALSA_VOLUME_DEPENDENCIES += alsa-lib
+
 $(ALSA_VOLUME_DIR)/getvolume.c:
 	rm -rf $(ALSA_VOLUME_DIR)
 	mkdir $(ALSA_VOLUME_DIR)
@@ -18,7 +20,7 @@ alsa-getvolume-source:
 alsa-setvolume:
 alsa-setvolume-source:
 
-alsa-volume: alsa-getvolume alsa-setvolume
+alsa-volume: $(ALSA_VOLUME_DEPENDENCIES) alsa-getvolume alsa-setvolume
 alsa-volume-source: alsa-getvolume-source alsa-setvolume-source
 
 ifeq ($(BR2_PACKAGE_ALSA_VOLUME),y)
