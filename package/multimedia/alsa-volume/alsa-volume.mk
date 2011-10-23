@@ -21,3 +21,6 @@ alsa-setvolume-source:
 alsa-volume: alsa-getvolume alsa-setvolume
 alsa-volume-source: alsa-getvolume-source alsa-setvolume-source
 
+ifeq ($(BR2_PACKAGE_ALSA_VOLUME),y)
+TARGETS += alsa-volume
+endif
