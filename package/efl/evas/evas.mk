@@ -11,9 +11,14 @@ EVAS_AUTORECONF = NO
 EVAS_INSTALL_STAGING = YES
 EVAS_INSTALL_TARGET = YES
 EVAS_DEPENDENCIES = host-pkg-config freetype eina
+HOST_EVAS_DEPENDENCIES = host-pkg-config host-freetype host-eina host-libpng
 
 ifeq ($(BR2_PACKAGE_EVAS_EXAMPLES),y)
 EVAS_CONF_OPT += --enable-build-examples
+endif
+
+ifeq ($(BR2_PACKAGE_EET),y)
+EVAS_DEPENDENCIES += eet
 endif
 
 ifeq ($(BR2_PACKAGE_LIBPNG),y)
