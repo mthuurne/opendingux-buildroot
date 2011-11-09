@@ -23,6 +23,7 @@ ifeq ($(BR2_PACKAGE_EDJE_AMALGAMATION),y)
 EDJE_CONF_OPT += --enable-amalgamation
 endif
 
+HOST_EDJE_DEPENDENCIES = host-pkg-config host-fontconfig host-lua host-eina host-evas host-eet host-embryo host-ecore
 
 $(eval $(call AUTOTARGETS,package/efl,edje))
 $(eval $(call AUTOTARGETS,package/efl,edje,host))
