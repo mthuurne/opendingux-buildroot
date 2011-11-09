@@ -10,7 +10,7 @@ EDJE_SITE = http://download.enlightenment.org/releases/
 EDJE_AUTORECONF = NO
 EDJE_INSTALL_STAGING = YES
 EDJE_INSTALL_TARGET = YES
-EDJE_DEPENDENCIES = host-pkg-config fontconfig freetype lua eina eet embryo ecore
+EDJE_DEPENDENCIES = host-pkg-config fontconfig freetype lua eina evas eet embryo ecore
 EDJE_CONF_OPT += --enable-fixed-point
 
 ifeq ($(BR2_PACKAGE_EDJE_AMALGAMATION),y)
