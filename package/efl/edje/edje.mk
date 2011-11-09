@@ -11,7 +11,13 @@ EDJE_AUTORECONF = NO
 EDJE_INSTALL_STAGING = YES
 EDJE_INSTALL_TARGET = YES
 EDJE_DEPENDENCIES = host-pkg-config fontconfig freetype lua eina evas eet embryo ecore
-EDJE_CONF_OPT += --enable-fixed-point
+EDJE_CONF_OPT += --enable-fixed-point \
+				 --disable-edje-cc \
+				 --disable-edje-decc \
+				 --disable-edje-recc \
+				 --disable-edje-player \
+				 --disable-edje-inspector \
+				 --disable-edje-external-inspector
 
 ifeq ($(BR2_PACKAGE_EDJE_AMALGAMATION),y)
 EDJE_CONF_OPT += --enable-amalgamation
