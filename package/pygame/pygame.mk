@@ -109,7 +109,7 @@ PYGAME_MODULES_ALL  =   $(addsuffix .so,$(addprefix $(PYGAME_LIB_DIR)/,$(PYGAME_
 #$(HOST_DIR)/usr/bin/python -OO -E -c 'import compileall ; compileall.compile_dir("$$i")' ;
 pygame_compile:
 	for i in `find $(PYGAME_LIB_DIR) -type d` ; do \
-		$(HOST_DIR)/usr/bin/python -OO -E -c "import compileall ; compileall.compile_dir('$$i')" ; \
+		$(HOST_DIR)/usr/bin/python -E -c "import compileall ; compileall.compile_dir('$$i')" ; \
 	done
 
 #pygame_compile:
