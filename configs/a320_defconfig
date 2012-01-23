@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00007-g35b241f-dirty
-# Tue Oct  4 03:55:54 2011
+# Buildroot version: 2010.11-00112-g3810462
+# Fri Oct 14 01:52:04 2011
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -131,7 +131,6 @@ BR2_PTHREAD_DEBUG=y
 #
 # BR2_BINUTILS_VERSION_2_20 is not set
 BR2_BINUTILS_VERSION_2_20_1=y
-# BR2_BINUTILS_VERSION_2_21_1 is not set
 BR2_BINUTILS_VERSION="2.20.1"
 BR2_EXTRA_BINUTILS_CONFIG_OPTIONS=""
 
@@ -161,10 +160,7 @@ BR2_GCC_SHARED_LIBGCC=y
 #
 # Gdb Options
 #
-
-#
-# Gdb debugger for the target needs WCHAR support in toolchain
-#
+# BR2_PACKAGE_GDB is not set
 BR2_PACKAGE_GDB_SERVER=y
 BR2_PACKAGE_GDB_HOST=y
 # BR2_GDB_VERSION_6_7_1 is not set
@@ -182,7 +178,7 @@ BR2_LARGEFILE=y
 # BR2_ENABLE_LOCALE is not set
 # BR2_ENABLE_LOCALE_PURGE is not set
 BR2_NEEDS_GETTEXT=y
-# BR2_USE_WCHAR is not set
+BR2_USE_WCHAR=y
 BR2_PREFER_SOFT_FLOAT=y
 BR2_SOFT_FLOAT=y
 # BR2_USE_SSP is not set
@@ -250,14 +246,12 @@ BR2_PACKAGE_ALSA_UTILS_ARECORD=y
 # BR2_PACKAGE_ALSA_UTILS_ASEQDUMP is not set
 # BR2_PACKAGE_ALSA_UTILS_ASEQNET is not set
 BR2_PACKAGE_ALSA_UTILS_SPEAKER_TEST=y
+BR2_PACKAGE_ALSA_VOLUME=y
 # BR2_PACKAGE_AUMIX is not set
 BR2_PACKAGE_FLAC=y
 # BR2_PACKAGE_FFMPEG is not set
+# BR2_PACKAGE_GSTREAMER is not set
 BR2_PACKAGE_FMTOOLS=y
-
-#
-# gstreamer requires a toolchain with WCHAR support
-#
 BR2_PACKAGE_LIBAO=y
 # BR2_PACKAGE_LIBCDAUDIO is not set
 # BR2_PACKAGE_LIBDVDREAD is not set
@@ -265,14 +259,8 @@ BR2_PACKAGE_LIBAO=y
 BR2_PACKAGE_LIBID3TAG=y
 BR2_PACKAGE_LIBMAD=y
 BR2_PACKAGE_LIBMIKMOD=y
-
-#
-# libmms requires a toolchain with WCHAR support
-#
-
-#
-# libmpd requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_LIBMMS is not set
+# BR2_PACKAGE_LIBMPD is not set
 # BR2_PACKAGE_LIBMPEG2 is not set
 BR2_PACKAGE_LIBOGG=y
 BR2_PACKAGE_LIBSNDFILE=y
@@ -283,10 +271,7 @@ BR2_PACKAGE_MADPLAY_ALSA=y
 BR2_PACKAGE_MPG123=y
 # BR2_PACKAGE_MPLAYER is not set
 BR2_PACKAGE_SPEEX=y
-
-#
-# swfdec requires a toolchain with WCHAR and C++ support
-#
+# BR2_PACKAGE_SWFDEC is not set
 # BR2_PACKAGE_FESTIVAL is not set
 BR2_PACKAGE_TAGLIB=y
 BR2_PACKAGE_TIMIDITY_INSTRUMENTS=y
@@ -323,6 +308,7 @@ BR2_PACKAGE_STRACE=y
 # BR2_PACKAGE_AUTOMAKE is not set
 # BR2_PACKAGE_BISON is not set
 # BR2_PACKAGE_BSDIFF is not set
+# BR2_PACKAGE_CVS is not set
 # BR2_PACKAGE_DISTCC is not set
 # BR2_PACKAGE_FAKEROOT is not set
 # BR2_PACKAGE_FLEX is not set
@@ -330,24 +316,16 @@ BR2_PACKAGE_STRACE=y
 #
 # native toolchain needs development files in target filesystem
 #
-
-#
-# gettext requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_GETTEXT is not set
+# BR2_PACKAGE_LIBINTL is not set
 # BR2_PACKAGE_LIBGMP is not set
 # BR2_PACKAGE_GPERF is not set
 # BR2_PACKAGE_MAKE is not set
 # BR2_PACKAGE_LIBMPC is not set
 # BR2_PACKAGE_LIBMPFR is not set
 # BR2_PACKAGE_LIBTOOL is not set
-
-#
-# m4 requires a toolchain with WCHAR support
-#
-
-#
-# pkg-config requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_M4 is not set
+# BR2_PACKAGE_PKG_CONFIG is not set
 
 #
 # Games
@@ -362,10 +340,7 @@ BR2_PACKAGE_STRACE=y
 #
 # Graphic applications
 #
-
-#
-# rrdtool requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_RRDTOOL is not set
 
 #
 # graphic libraries
@@ -405,10 +380,7 @@ BR2_PACKAGE_SDL_GFX=y
 #
 # BR2_PACKAGE_QT is not set
 # BR2_PACKAGE_EFL is not set
-
-#
-# X.org requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_XORG7 is not set
 
 #
 # X libraries and helper libraries
@@ -422,10 +394,7 @@ BR2_PACKAGE_SDL_GFX=y
 #
 # X applications
 #
-
-#
-# gob2 requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_GOB2 is not set
 
 #
 # midori requires C++, WCHAR in toolchain and libgtk2
@@ -448,14 +417,8 @@ BR2_PACKAGE_DINGOO_TVOUT=y
 # BR2_PACKAGE_GENEXT2FS is not set
 # BR2_PACKAGE_GENROMFS is not set
 # BR2_PACKAGE_GPSD is not set
-
-#
-# gvfs requires a toolchain with LARGEFILE and WCHAR support
-#
-
-#
-# hal requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_GVFS is not set
+# BR2_PACKAGE_HAL is not set
 # BR2_PACKAGE_HWDATA is not set
 BR2_PACKAGE_I2C_TOOLS=y
 # BR2_PACKAGE_INPUT_TOOLS is not set
@@ -511,24 +474,14 @@ BR2_PACKAGE_MTD_UBIRENAME=y
 BR2_PACKAGE_MTD_UBIRMVOL=y
 BR2_PACKAGE_MTD_UBIRSVOL=y
 BR2_PACKAGE_MTD_UBIUPDATEVOL=y
-
-#
-# ntfs-3g requires a toolchain with LARGEFILE and WCHAR support
-#
-
-#
-# ntfsprogs requires a toolchain with WCHAR and LARGEFILE support
-#
+# BR2_PACKAGE_NTFS_3G is not set
+# BR2_PACKAGE_NTFSPROGS is not set
 # BR2_PACKAGE_PCIUTILS is not set
 BR2_PACKAGE_PWSWD=y
 # BR2_PACKAGE_RNG_TOOLS is not set
 # BR2_PACKAGE_SETSERIAL is not set
 # BR2_PACKAGE_SMARTMONTOOLS is not set
 # BR2_PACKAGE_SQUASHFS is not set
-
-#
-# sshfs requires a toolchain with LARGEFILE and WCHAR support
-#
 # BR2_PACKAGE_SYSSTAT is not set
 # BR2_PACKAGE_UDEV is not set
 # BR2_PACKAGE_USB_MODESWITCH is not set
@@ -544,14 +497,8 @@ BR2_PACKAGE_PWSWD=y
 # BR2_PACKAGE_LUA is not set
 # BR2_PACKAGE_MICROPERL is not set
 # BR2_PACKAGE_PHP is not set
-
-#
-# python requires a toolchain with WCHAR support
-#
-
-#
-# ruby requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_PYTHON is not set
+# BR2_PACKAGE_RUBY is not set
 # BR2_PACKAGE_TCL is not set
 
 #
@@ -561,10 +508,7 @@ BR2_PACKAGE_PWSWD=y
 #
 # Compression and decompression
 #
-
-#
-# libarchive requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_LIBARCHIVE is not set
 BR2_PACKAGE_LZO=y
 BR2_PACKAGE_ZLIB=y
 
@@ -587,10 +531,7 @@ BR2_PACKAGE_SQLITE=y
 #
 # Filesystem
 #
-
-#
-# gamin requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_GAMIN is not set
 BR2_PACKAGE_LIBCONFIG=y
 BR2_PACKAGE_LIBCONFUSE=y
 # BR2_PACKAGE_LIBFUSE is not set
@@ -600,26 +541,17 @@ BR2_PACKAGE_LIBSYSFS=y
 #
 # Graphics
 #
-
-#
-# atk requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_ATK is not set
 # BR2_PACKAGE_CAIRO is not set
 # BR2_PACKAGE_FONTCONFIG is not set
 BR2_PACKAGE_FREETYPE=y
 BR2_PACKAGE_JPEG=y
 # BR2_PACKAGE_LIBART is not set
-
-#
-# libgtk2 requires a toolchain with WCHAR and C++ support
-#
+# BR2_PACKAGE_GDK_PIXBUF is not set
 BR2_PACKAGE_LIBPNG=y
 # BR2_PACKAGE_LIBSVGTINY is not set
 BR2_PACKAGE_LIBUNGIF=y
-
-#
-# pango requires a toolchain with WCHAR and C++ support
-#
+# BR2_PACKAGE_PANGO is not set
 # BR2_PACKAGE_PIXMAN is not set
 # BR2_PACKAGE_TIFF is not set
 
@@ -650,10 +582,7 @@ BR2_PACKAGE_LIBAIO=y
 # BR2_PACKAGE_LIBPCAP is not set
 # BR2_PACKAGE_LIBOSIP2 is not set
 # BR2_PACKAGE_LIBRSYNC is not set
-
-#
-# libsoup requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_LIBSOUP is not set
 # BR2_PACKAGE_LIBUPNP is not set
 
 #
@@ -665,23 +594,14 @@ BR2_PACKAGE_LIBAIO=y
 # BR2_PACKAGE_LIBDAEMON is not set
 # BR2_PACKAGE_LIBELF is not set
 BR2_PACKAGE_LIBEVENT=y
-
-#
-# libglib2 requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_LIBGLIB2 is not set
 BR2_PACKAGE_LIBOIL=y
 
 #
 # Text and terminal handling
 #
-
-#
-# enchant requires a toolchain with C++ and WCHAR support enabled
-#
-
-#
-# icu requires a toolchain with C++ support and WCHAR enabled
-#
+# BR2_PACKAGE_ENCHANT is not set
+# BR2_PACKAGE_ICU is not set
 BR2_PACKAGE_LIBICONV=y
 BR2_PACKAGE_NCURSES=y
 BR2_PACKAGE_NCURSES_TARGET_PANEL=y
@@ -706,10 +626,7 @@ BR2_PACKAGE_EXPAT=y
 # Miscellaneous
 #
 BR2_PACKAGE_GMENU2X=y
-
-#
-# shared-mime-info requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_SHARED_MIME_INFO is not set
 
 #
 # Networking applications
@@ -744,14 +661,8 @@ BR2_PACKAGE_GMENU2X=y
 # BR2_PACKAGE_LRZSZ is not set
 # BR2_PACKAGE_MIIDIAG is not set
 # BR2_PACKAGE_MROUTED is not set
-
-#
-# mutt requires a toolchain with WCHAR support
-#
-
-#
-# nbd requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_MUTT is not set
+# BR2_PACKAGE_NBD is not set
 # BR2_PACKAGE_NCFTP is not set
 # BR2_PACKAGE_NETPLUG is not set
 # BR2_PACKAGE_NETSNMP is not set
@@ -811,10 +722,7 @@ BR2_PACKAGE_IPKG=y
 BR2_PACKAGE_DIALOG=y
 BR2_PACKAGE_FILE=y
 BR2_PACKAGE_LOCKFILE_PROGS=y
-
-#
-# logrotate requires a toolchain with WCHAR support
-#
+# BR2_PACKAGE_LOGROTATE is not set
 # BR2_PACKAGE_SCREEN is not set
 # BR2_PACKAGE_SUDO is not set
 # BR2_PACKAGE_WHICH is not set
