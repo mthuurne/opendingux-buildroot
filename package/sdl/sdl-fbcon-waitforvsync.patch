@@ -1,7 +1,5 @@
-Only in SDL-1.2.15/src/audio/alsa: SDL_alsa_audio.c.rej
-diff -ru SDL-1.2.15.org/src/video/fbcon/SDL_fbvideo.c SDL-1.2.15/src/video/fbcon/SDL_fbvideo.c
 --- SDL-1.2.15.org/src/video/fbcon/SDL_fbvideo.c	2012-01-19 07:30:06.000000000 +0100
-+++ SDL-1.2.15/src/video/fbcon/SDL_fbvideo.c	2012-02-03 22:33:02.000000000 +0100
++++ SDL-1.2.15/src/video/fbcon/SDL_fbvideo.c	2012-02-04 23:34:04.000000000 +0100
 @@ -34,6 +34,7 @@
  #include <asm/page.h>		/* For definition of PAGE_SIZE */
  #endif
@@ -10,14 +8,15 @@ diff -ru SDL-1.2.15.org/src/video/fbcon/SDL_fbvideo.c SDL-1.2.15/src/video/fbcon
  #include <linux/vt.h>
  
  #include "SDL_video.h"
-@@ -1409,8 +1410,8 @@
+@@ -1409,8 +1410,9 @@
  
  static void FB_WaitVBL(_THIS)
  {
 -#ifdef FBIOWAITRETRACE /* Heheh, this didn't make it into the main kernel */
 -	ioctl(console_fd, FBIOWAITRETRACE, 0);
 +#ifdef FBIO_WAITFORVSYNC
-+	ioctl(console_fd, FBIO_WAITFORVSYNC, 0);
++	unsigned int screen = 0;
++	ioctl(console_fd, FBIO_WAITFORVSYNC, &screen);
  #endif
  	return;
  }
