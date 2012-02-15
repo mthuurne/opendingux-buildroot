@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00112-g3810462
-# Fri Oct 14 01:52:04 2011
+# Buildroot version: 2010.11-00149-g225cd71
+# Tue Feb 14 19:20:24 2012
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -250,8 +250,8 @@ BR2_PACKAGE_ALSA_VOLUME=y
 # BR2_PACKAGE_AUMIX is not set
 BR2_PACKAGE_FLAC=y
 # BR2_PACKAGE_FFMPEG is not set
-# BR2_PACKAGE_GSTREAMER is not set
 BR2_PACKAGE_FMTOOLS=y
+# BR2_PACKAGE_GSTREAMER is not set
 BR2_PACKAGE_LIBAO=y
 # BR2_PACKAGE_LIBCDAUDIO is not set
 # BR2_PACKAGE_LIBDVDREAD is not set
@@ -380,6 +380,7 @@ BR2_PACKAGE_SDL_GFX=y
 #
 # BR2_PACKAGE_QT is not set
 # BR2_PACKAGE_EFL is not set
+# BR2_PACKAGE_PYGAME is not set
 # BR2_PACKAGE_XORG7 is not set
 
 #
@@ -594,6 +595,7 @@ BR2_PACKAGE_LIBAIO=y
 # BR2_PACKAGE_LIBDAEMON is not set
 # BR2_PACKAGE_LIBELF is not set
 BR2_PACKAGE_LIBEVENT=y
+# BR2_PACKAGE_LIBFFI is not set
 # BR2_PACKAGE_LIBGLIB2 is not set
 BR2_PACKAGE_LIBOIL=y
 
