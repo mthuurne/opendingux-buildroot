@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00149-g225cd71
-# Tue Feb 14 19:20:24 2012
+# Buildroot version: 2010.11-00149-g8967488-dirty
+# Sat Mar 10 15:21:58 2012
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -20,15 +20,17 @@ BR2_mipsel=y
 # BR2_mips_2 is not set
 # BR2_mips_3 is not set
 # BR2_mips_4 is not set
-BR2_mips_32=y
+# BR2_mips_32 is not set
 # BR2_mips_32r2 is not set
 # BR2_mips_64 is not set
 # BR2_mips_64r2 is not set
 # BR2_mips_16 is not set
+BR2_mips_jz4740=y
 BR2_MIPS_OABI32=y
 BR2_ARCH="mipsel"
 BR2_ENDIAN="LITTLE"
-BR2_GCC_TARGET_TUNE="mips32"
+BR2_GCC_TARGET_TUNE="mips32r2"
+BR2_GCC_TARGET_ARCH="mips32"
 BR2_GCC_TARGET_ABI="32"
 
 #
