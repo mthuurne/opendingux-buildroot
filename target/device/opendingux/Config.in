@@ -16,7 +16,7 @@ choice
 
 config BR2_TARGET_OPENDINGUX_A320
 	bool "Dingoo A320/A330"
-	depends on BR2_mipsel && BR2_mips_32
+	depends on BR2_mipsel && BR2_mips_jz4740
 	help
 	  OpenDingux on the Dingoo Digital A320 and Dingoo Technology A330.
 
