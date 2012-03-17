@@ -1,0 +1,36 @@
+commit f1530e67fbe07663bb32e68c27fe2070b4d3a2f2
+Author: Paul Cercueil <paul@crapouillou.net>
+Date:   Thu Mar 15 19:02:19 2012 +0100
+
+    810-arm-softfloat-libgcc.patch
+
+diff --git a/gcc/config/arm/linux-elf.h b/gcc/config/arm/linux-elf.h
+index 81d27bb..77bd193 100644
+--- a/gcc/config/arm/linux-elf.h
++++ b/gcc/config/arm/linux-elf.h
+@@ -60,7 +60,7 @@
+    %{shared:-lc} \
+    %{!shared:%{profile:-lc_p}%{!profile:-lc}}"
+ 
+-#define LIBGCC_SPEC "%{msoft-float:-lfloat} %{mfloat-abi=soft*:-lfloat} -lgcc"
++#define LIBGCC_SPEC "-lgcc"
+ 
+ #define GLIBC_DYNAMIC_LINKER "/lib/ld-linux.so.2"
+ 
+diff --git a/gcc/config/arm/t-linux b/gcc/config/arm/t-linux
+index a6fddad..7bb6a2b 100644
+--- a/gcc/config/arm/t-linux
++++ b/gcc/config/arm/t-linux
+@@ -23,7 +23,11 @@ TARGET_LIBGCC2_CFLAGS = -fomit-frame-pointer -fPIC
+ 
+ LIB1ASMSRC = arm/lib1funcs.asm
+ LIB1ASMFUNCS = _udivsi3 _divsi3 _umodsi3 _modsi3 _dvmd_lnx _clzsi2 _clzdi2 \
+-	_arm_addsubdf3 _arm_addsubsf3
++	_arm_addsubdf3 _arm_addsubsf3 \
++	_arm_negdf2 _arm_muldivdf3 _arm_cmpdf2 _arm_unorddf2 \
++	_arm_fixdfsi _arm_fixunsdfsi _arm_truncdfsf2 \
++	_arm_negsf2 _arm_muldivsf3 _arm_cmpsf2 _arm_unordsf2 \
++	_arm_fixsfsi _arm_fixunssfsi
+ 
+ # MULTILIB_OPTIONS = mhard-float/msoft-float
+ # MULTILIB_DIRNAMES = hard-float soft-float

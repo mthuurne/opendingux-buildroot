@@ -1,0 +1,19 @@
+commit 2831da0b5c211a83904d32f844c1509ecb407c3c
+Author: Paul Cercueil <paul@crapouillou.net>
+Date:   Thu Mar 15 19:01:26 2012 +0100
+
+    302-c99-snprintf.patch
+
+diff --git a/libstdc++-v3/include/c_global/cstdio b/libstdc++-v3/include/c_global/cstdio
+index 049704d..407bd2d 100644
+--- a/libstdc++-v3/include/c_global/cstdio
++++ b/libstdc++-v3/include/c_global/cstdio
+@@ -137,7 +137,7 @@ namespace std
+   using ::vsprintf;
+ } // namespace
+ 
+-#if _GLIBCXX_USE_C99
++#if _GLIBCXX_USE_C99 || defined __UCLIBC__
+ 
+ #undef snprintf
+ #undef vfscanf

@@ -1,0 +1,19 @@
+commit 8b96c1c8c580e8954e9a8c675b17f5b5f9a58fc4
+Author: Paul Cercueil <paul@crapouillou.net>
+Date:   Thu Mar 15 19:00:45 2012 +0100
+
+    301-missing-execinfo_h.patch
+
+diff --git a/boehm-gc/include/gc.h b/boehm-gc/include/gc.h
+index c51e017..a7ba8dc 100644
+--- a/boehm-gc/include/gc.h
++++ b/boehm-gc/include/gc.h
+@@ -503,7 +503,7 @@ GC_API GC_PTR GC_malloc_atomic_ignore_off_page GC_PROTO((size_t lb));
+ #if defined(__linux__) || defined(__GLIBC__)
+ # include <features.h>
+ # if (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 1 || __GLIBC__ > 2) \
+-     && !defined(__ia64__)
++     && !defined(__ia64__) && !defined(__UCLIBC__)
+ #   ifndef GC_HAVE_BUILTIN_BACKTRACE
+ #     define GC_HAVE_BUILTIN_BACKTRACE
+ #   endif

@@ -1,17 +1,14 @@
-http://gcc.gnu.org/ml/gcc-patches/2008-10/msg00269.html
+commit ea4214dc0790a8c4553ce1bbbfa844db9e5931d1
+Author: Paul Cercueil <paul@crapouillou.net>
+Date:   Thu Mar 15 19:03:09 2012 +0100
 
-On glibc the libc.so carries a copy of the math function copysignl() but
-on uClibc math functions like copysignl() live in libm. Since libgcc_s
-contains unresolved symbols, any attempt to link against libgcc_s
-without explicitely specifying -lm fails, resulting in a broken
-bootstrap of the compiler.
+    powerpc-link-with-math-lib.patch.conditional
 
-Forward port to gcc 4.5.1 by Gustavo Zacarias <gustavo@zacarias.com.ar>
-
-diff -Nura gcc-4.5.1.orig/gcc/config/t-slibgcc-elf-ver gcc-4.5.1/gcc/config/t-slibgcc-elf-ver
---- gcc-4.5.1.orig/gcc/config/t-slibgcc-elf-ver	2010-11-03 14:35:08.644904042 -0300
-+++ gcc-4.5.1/gcc/config/t-slibgcc-elf-ver	2010-11-03 14:35:56.332904024 -0300
-@@ -27,7 +27,7 @@
+diff --git a/gcc/config/t-slibgcc-elf-ver b/gcc/config/t-slibgcc-elf-ver
+index d5ef9ca..bd34467 100644
+--- a/gcc/config/t-slibgcc-elf-ver
++++ b/gcc/config/t-slibgcc-elf-ver
+@@ -27,7 +27,7 @@ SHLIB_MAP = @shlib_map_file@
  SHLIB_OBJS = @shlib_objs@
  SHLIB_DIR = @multilib_dir@
  SHLIB_SLIBDIR_QUAL = @shlib_slibdir_qual@
@@ -20,18 +17,19 @@ diff -Nura gcc-4.5.1.orig/gcc/config/t-slibgcc-elf-ver gcc-4.5.1/gcc/config/t-sl
  SHLIB_MAKE_SOLINK = $(LN_S) $(SHLIB_SONAME) $(SHLIB_DIR)/$(SHLIB_SOLINK)
  SHLIB_INSTALL_SOLINK = $(LN_S) $(SHLIB_SONAME) \
  	$$(DESTDIR)$$(slibdir)$(SHLIB_SLIBDIR_QUAL)/$(SHLIB_SOLINK)
-diff -Nura gcc-4.5.1.orig/libgcc/Makefile.in gcc-4.5.1/libgcc/Makefile.in
---- gcc-4.5.1.orig/libgcc/Makefile.in	2010-11-03 14:32:44.272904042 -0300
-+++ gcc-4.5.1/libgcc/Makefile.in	2010-11-03 14:37:03.893904042 -0300
-@@ -39,6 +39,7 @@
+diff --git a/libgcc/Makefile.in b/libgcc/Makefile.in
+index 7e2ab93..2b13ef4 100644
+--- a/libgcc/Makefile.in
++++ b/libgcc/Makefile.in
+@@ -39,6 +39,7 @@ enable_shared = @enable_shared@
  decimal_float = @decimal_float@
  enable_decimal_float = @enable_decimal_float@
  fixed_point = @fixed_point@
 +LIBGCC_LIBM = @LIBGCC_LIBM@
  
  host_noncanonical = @host_noncanonical@
- 
-@@ -798,9 +799,10 @@
+ target_noncanonical = @target_noncanonical@
+@@ -805,9 +806,10 @@ libgcc_s$(SHLIB_EXT): $(libgcc-s-objects) $(extra-parts)
  		@multilib_dir@,$(MULTIDIR),$(subst \
  		@shlib_objs@,$(objects),$(subst \
  		@shlib_base_name@,libgcc_s,$(subst \
@@ -43,10 +41,11 @@ diff -Nura gcc-4.5.1.orig/libgcc/Makefile.in gcc-4.5.1/libgcc/Makefile.in
  
  libunwind$(SHLIB_EXT): $(libunwind-s-objects) $(extra-parts)
  	# @multilib_flags@ is still needed because this may use
-diff -Nura gcc-4.5.1.orig/libgcc/configure gcc-4.5.1/libgcc/configure
---- gcc-4.5.1.orig/libgcc/configure	2010-11-03 14:32:44.283904042 -0300
-+++ gcc-4.5.1/libgcc/configure	2010-11-03 14:39:48.685904042 -0300
-@@ -557,6 +557,7 @@
+diff --git a/libgcc/configure b/libgcc/configure
+index 8a27aab..f4eee50 100644
+--- a/libgcc/configure
++++ b/libgcc/configure
+@@ -557,6 +557,7 @@ asm_hidden_op
  extra_parts
  tmake_file
  set_use_emutls
@@ -54,7 +53,7 @@ diff -Nura gcc-4.5.1.orig/libgcc/configure gcc-4.5.1/libgcc/configure
  set_have_cc_tls
  vis_hide
  fixed_point
-@@ -3847,6 +3848,37 @@
+@@ -3921,6 +3922,37 @@ if test "$enable_tls $gcc_cv_use_emutls" = "yes yes"; then
    set_use_emutls="-DUSE_EMUTLS"
  fi
  
@@ -92,10 +91,11 @@ diff -Nura gcc-4.5.1.orig/libgcc/configure gcc-4.5.1/libgcc/configure
  
  # Conditionalize the makefile for this target machine.
  tmake_file_=
-diff -Nura gcc-4.5.1.orig/libgcc/configure.ac gcc-4.5.1/libgcc/configure.ac
---- gcc-4.5.1.orig/libgcc/configure.ac	2010-11-03 14:32:44.735904042 -0300
-+++ gcc-4.5.1/libgcc/configure.ac	2010-11-03 14:42:11.278904045 -0300
-@@ -238,6 +238,27 @@
+diff --git a/libgcc/configure.ac b/libgcc/configure.ac
+index 7dbe114..e1a50d8 100644
+--- a/libgcc/configure.ac
++++ b/libgcc/configure.ac
+@@ -247,6 +247,27 @@ if test "$enable_tls $gcc_cv_have_cc_tls" = "yes yes"; then
  fi
  AC_SUBST(set_have_cc_tls)
  
