@@ -40,6 +40,10 @@ choice
 		depends on !BR2_avr32
 		bool "binutils 2.20.1"
 
+	config BR2_BINUTILS_VERSION_2_21_1
+		depends on !BR2_avr32
+		bool "binutils 2.21.1"
+
 endchoice
 
 config BR2_BINUTILS_VERSION
@@ -51,6 +55,7 @@ config BR2_BINUTILS_VERSION
 	default "2.19.1"	if BR2_BINUTILS_VERSION_2_19_1
 	default "2.20"		if BR2_BINUTILS_VERSION_2_20
 	default "2.20.1"	if BR2_BINUTILS_VERSION_2_20_1
+	default "2.21.1"	if BR2_BINUTILS_VERSION_2_21_1
 
 config BR2_EXTRA_BINUTILS_CONFIG_OPTIONS
 	string "Additional binutils options"
