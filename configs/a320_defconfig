@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00153-g44a0aa6
-# Sat Mar 17 19:41:39 2012
+# Buildroot version: 2010.11-00058-gd1a4ec0
+# Sun Mar 18 01:34:19 2012
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -27,6 +27,11 @@ BR2_mipsel=y
 # BR2_mips_16 is not set
 BR2_mips_jz4740=y
 BR2_MIPS_OABI32=y
+# BR2_MIPS_ABI32 is not set
+# BR2_MIPS_EABI is not set
+# BR2_MIPS_ABI64 is not set
+# BR2_MIPS_OABI64 is not set
+# BR2_MIPS_ABI_none is not set
 BR2_ARCH="mipsel"
 BR2_ENDIAN="LITTLE"
 BR2_GCC_TARGET_TUNE="mips32r2"
@@ -121,9 +126,10 @@ BR2_DEFAULT_KERNEL_HEADERS="2.6.36.1"
 # uClibc Options
 #
 # BR2_UCLIBC_VERSION_0_9_30 is not set
-BR2_UCLIBC_VERSION_0_9_31=y
+# BR2_UCLIBC_VERSION_0_9_31 is not set
+BR2_UCLIBC_VERSION_0_9_33=y
 # BR2_UCLIBC_VERSION_SNAPSHOT is not set
-BR2_UCLIBC_VERSION_STRING="0.9.31"
+BR2_UCLIBC_VERSION_STRING="0.9.33"
 BR2_UCLIBC_CONFIG="target/device/opendingux/a320/uclibc.config"
 BR2_PTHREAD_DEBUG=y
 # BR2_UCLIBC_INSTALL_TEST_SUITE is not set
@@ -132,8 +138,9 @@ BR2_PTHREAD_DEBUG=y
 # Binutils Options
 #
 # BR2_BINUTILS_VERSION_2_20 is not set
-BR2_BINUTILS_VERSION_2_20_1=y
-BR2_BINUTILS_VERSION="2.20.1"
+# BR2_BINUTILS_VERSION_2_20_1 is not set
+BR2_BINUTILS_VERSION_2_21_1=y
+BR2_BINUTILS_VERSION="2.21.1"
 BR2_EXTRA_BINUTILS_CONFIG_OPTIONS=""
 
 #
