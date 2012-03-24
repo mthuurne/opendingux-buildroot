@@ -127,6 +127,12 @@ GCC_WITH_HOST_MPC=--with-mpc=$(MPC_HOST_DIR)
 HOST_SOURCE += host-libmpc-source
 endif
 
+# GCC 4.7.x prerequisites
+ifeq ($(findstring x4.7.,x$(GCC_VERSION)),x4.7.)
+GCC_WITH_HOST_MPC=--with-mpc=$(MPC_HOST_DIR)
+HOST_SOURCE += host-libmpc-source
+endif
+
 ifeq ($(BR2_INSTALL_FORTRAN),y)
 GCC_TARGET_LANGUAGES:=$(GCC_TARGET_LANGUAGES),fortran
 #GCC_TARGET_PREREQ+=$(TARGET_DIR)/usr/lib/libmpfr.so $(TARGET_DIR)/usr/lib/libgmp.so
