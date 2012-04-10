@@ -14,7 +14,7 @@ endef
 define PWSWD_INSTALL_TARGET_CMDS
 	$(INSTALL) -D -m 0755 $(@D)/pwswd $(TARGET_DIR)/usr/sbin/pwswd
 	$(INSTALL) -D -m 0644 $(@D)/template.conf $(TARGET_DIR)/etc/pwswd.conf
-	$(INSTALL) -D -m 0755 package/pwswd/S30pwswd $(TARGET_DIR)/etc/init.d/S30pwswd
+	$(INSTALL) -D -m 0755 package/pwswd/S91pwswd.sh $(TARGET_DIR)/etc/init.d/S91pwswd.sh
 endef
 
 $(eval $(call GENTARGETS,package,pwswd))
