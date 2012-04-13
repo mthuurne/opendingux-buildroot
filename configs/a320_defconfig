@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00062-gd669251
-# Fri Apr 13 02:53:20 2012
+# Buildroot version: 2010.11-00063-ga25eaf8
+# Fri Apr 13 02:56:13 2012
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -217,6 +217,7 @@ BR2_PACKAGE_BUSYBOX_CONFIG="target/device/opendingux/a320/busybox-1.17.x.config"
 # Audio and video libraries and applications
 #
 BR2_PACKAGE_ALSA_LIB=y
+# BR2_PACKAGE_ALSA_LIB_PYTHON is not set
 
 #
 # ALSA lib selection
@@ -503,7 +504,28 @@ BR2_PACKAGE_PWSWD=y
 # BR2_PACKAGE_LUA is not set
 # BR2_PACKAGE_MICROPERL is not set
 # BR2_PACKAGE_PHP is not set
-# BR2_PACKAGE_PYTHON is not set
+BR2_PACKAGE_PYTHON=y
+# BR2_PACKAGE_PYTHON_PY_ONLY is not set
+BR2_PACKAGE_PYTHON_PYC_ONLY=y
+# BR2_PACKAGE_PYTHON_PY_PYC is not set
+
+#
+# core python modules
+#
+
+#
+# The following modules are unusual or require extra libraries
+#
+# BR2_PACKAGE_PYTHON_BZIP2 is not set
+# BR2_PACKAGE_PYTHON_BSDDB is not set
+# BR2_PACKAGE_PYTHON_CODECSCJK is not set
+BR2_PACKAGE_PYTHON_CURSES=y
+BR2_PACKAGE_PYTHON_PYEXPAT=y
+BR2_PACKAGE_PYTHON_READLINE=y
+# BR2_PACKAGE_PYTHON_SSL is not set
+# BR2_PACKAGE_PYTHON_UNICODEDATA is not set
+BR2_PACKAGE_PYTHON_SQLITE=y
+BR2_PACKAGE_PYTHON_ZLIB=y
 # BR2_PACKAGE_RUBY is not set
 # BR2_PACKAGE_TCL is not set
 
@@ -600,7 +622,7 @@ BR2_PACKAGE_LIBAIO=y
 # BR2_PACKAGE_LIBDAEMON is not set
 # BR2_PACKAGE_LIBELF is not set
 BR2_PACKAGE_LIBEVENT=y
-# BR2_PACKAGE_LIBFFI is not set
+BR2_PACKAGE_LIBFFI=y
 # BR2_PACKAGE_LIBGLIB2 is not set
 BR2_PACKAGE_LIBOIL=y
 
