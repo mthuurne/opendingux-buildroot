@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00063-ga25eaf8
-# Fri Apr 13 02:56:13 2012
+# Buildroot version: 2010.11-00064-g5c0cb4f
+# Fri Apr 13 02:59:40 2012
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -386,7 +386,7 @@ BR2_PACKAGE_SDL_GFX=y
 #
 # BR2_PACKAGE_QT is not set
 # BR2_PACKAGE_EFL is not set
-# BR2_PACKAGE_PYGAME is not set
+BR2_PACKAGE_PYGAME=y
 # BR2_PACKAGE_XORG7 is not set
 
 #
