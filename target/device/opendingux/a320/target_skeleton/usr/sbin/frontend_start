@@ -10,9 +10,3 @@ if [ -f /usr/local/sbin/frontend_start ]; then
 else
 	/usr/bin/gmenu2x
 fi
-
-# Re-enable the framebuffer console in case of an error
-if [ $? -ne 0 ]; then
-	echo 1 > /sys/devices/virtual/vtconsole/vtcon1/bind
-fi
-
