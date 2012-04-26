@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00058-gd1a4ec0
-# Sun Mar 18 01:34:19 2012
+# Buildroot version: 2010.11-00064-g5c0cb4f
+# Fri Apr 13 02:59:40 2012
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -27,11 +27,6 @@ BR2_mipsel=y
 # BR2_mips_16 is not set
 BR2_mips_jz4740=y
 BR2_MIPS_OABI32=y
-# BR2_MIPS_ABI32 is not set
-# BR2_MIPS_EABI is not set
-# BR2_MIPS_ABI64 is not set
-# BR2_MIPS_OABI64 is not set
-# BR2_MIPS_ABI_none is not set
 BR2_ARCH="mipsel"
 BR2_ENDIAN="LITTLE"
 BR2_GCC_TARGET_TUNE="mips32r2"
@@ -151,6 +146,7 @@ BR2_EXTRA_BINUTILS_CONFIG_OPTIONS=""
 # BR2_GCC_VERSION_4_4_X is not set
 # BR2_GCC_VERSION_4_5_X is not set
 BR2_GCC_VERSION_4_6_X=y
+# BR2_GCC_VERSION_4_7_X is not set
 # BR2_GCC_VERSION_SNAP is not set
 BR2_GCC_SUPPORTS_FINEGRAINEDMTUNE=y
 BR2_GCC_VERSION="4.6.3"
@@ -221,6 +217,7 @@ BR2_PACKAGE_BUSYBOX_CONFIG="target/device/opendingux/a320/busybox-1.17.x.config"
 # Audio and video libraries and applications
 #
 BR2_PACKAGE_ALSA_LIB=y
+# BR2_PACKAGE_ALSA_LIB_PYTHON is not set
 
 #
 # ALSA lib selection
@@ -389,7 +386,7 @@ BR2_PACKAGE_SDL_GFX=y
 #
 # BR2_PACKAGE_QT is not set
 # BR2_PACKAGE_EFL is not set
-# BR2_PACKAGE_PYGAME is not set
+BR2_PACKAGE_PYGAME=y
 # BR2_PACKAGE_XORG7 is not set
 
 #
@@ -507,7 +504,28 @@ BR2_PACKAGE_PWSWD=y
 # BR2_PACKAGE_LUA is not set
 # BR2_PACKAGE_MICROPERL is not set
 # BR2_PACKAGE_PHP is not set
-# BR2_PACKAGE_PYTHON is not set
+BR2_PACKAGE_PYTHON=y
+# BR2_PACKAGE_PYTHON_PY_ONLY is not set
+BR2_PACKAGE_PYTHON_PYC_ONLY=y
+# BR2_PACKAGE_PYTHON_PY_PYC is not set
+
+#
+# core python modules
+#
+
+#
+# The following modules are unusual or require extra libraries
+#
+# BR2_PACKAGE_PYTHON_BZIP2 is not set
+# BR2_PACKAGE_PYTHON_BSDDB is not set
+# BR2_PACKAGE_PYTHON_CODECSCJK is not set
+BR2_PACKAGE_PYTHON_CURSES=y
+BR2_PACKAGE_PYTHON_PYEXPAT=y
+BR2_PACKAGE_PYTHON_READLINE=y
+# BR2_PACKAGE_PYTHON_SSL is not set
+# BR2_PACKAGE_PYTHON_UNICODEDATA is not set
+BR2_PACKAGE_PYTHON_SQLITE=y
+BR2_PACKAGE_PYTHON_ZLIB=y
 # BR2_PACKAGE_RUBY is not set
 # BR2_PACKAGE_TCL is not set
 
@@ -604,7 +622,7 @@ BR2_PACKAGE_LIBAIO=y
 # BR2_PACKAGE_LIBDAEMON is not set
 # BR2_PACKAGE_LIBELF is not set
 BR2_PACKAGE_LIBEVENT=y
-# BR2_PACKAGE_LIBFFI is not set
+BR2_PACKAGE_LIBFFI=y
 # BR2_PACKAGE_LIBGLIB2 is not set
 BR2_PACKAGE_LIBOIL=y
 

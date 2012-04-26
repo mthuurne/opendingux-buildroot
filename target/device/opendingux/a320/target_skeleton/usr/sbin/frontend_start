@@ -8,11 +8,5 @@ echo 0 > /sys/devices/virtual/vtconsole/vtcon1/bind
 if [ -f /usr/local/sbin/frontend_start ]; then
 	. /usr/local/sbin/frontend_start
 else
-	/usr/bin/gmenu2x > /var/log/gmenu2x.log 2>&1
+	/usr/bin/gmenu2x
 fi
-
-# Re-enable the framebuffer console in case of an error
-if [ $? -ne 0 ]; then
-	echo 1 > /sys/devices/virtual/vtconsole/vtcon1/bind
-fi
-
