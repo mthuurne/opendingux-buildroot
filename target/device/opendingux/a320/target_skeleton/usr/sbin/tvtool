@@ -5,7 +5,7 @@ amixer set Speaker off
 if [ -f /etc/local/tvout.conf ]; then
 tvout --`cat /etc/local/tvout.conf`
 else
-tvout --pal
+tvout --pal-60
 fi
 elif [ "$1" = "--off" ]; then
 tvout --off
