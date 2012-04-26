@@ -1,12 +1,12 @@
 # ASH configuration file
 
 export PATH=\
-/bin:\
-/sbin:\
-/usr/bin:\
-/usr/sbin:\
 /usr/local/bin:\
-/usr/local/sbin
+/usr/bin:\
+/bin:\
+/usr/local/sbin:\
+/usr/sbin:\
+/sbin
 
 # If running interactively, then:
 if [ "$PS1" ]; then
