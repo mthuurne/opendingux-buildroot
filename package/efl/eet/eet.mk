@@ -28,6 +28,9 @@ ifeq ($(BR2_PACKAGE_LIBGCRYPT),y)
 EET_DEPENDENCIES += libgcrypt
 endif
 
+ifeq ($(BR2_PACKAGE_OPENSSL),y)
+EET_DEPENDENCIES += openssl
+endif
 
 $(eval $(call AUTOTARGETS,package/efl,eet))
 $(eval $(call AUTOTARGETS,package/efl,eet,host))
