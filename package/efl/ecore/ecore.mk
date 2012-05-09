@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-ECORE_VERSION = 1.0.0
-ECORE_SOURCE = ecore-$(ECORE_VERSION).tar.gz
+ECORE_VERSION = 1.2.0
+ECORE_SOURCE = ecore-$(ECORE_VERSION).tar.bz2
 ECORE_SITE = http://download.enlightenment.org/releases/
 ECORE_AUTORECONF = NO
 ECORE_INSTALL_STAGING = YES
