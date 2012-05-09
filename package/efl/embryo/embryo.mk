@@ -10,7 +10,7 @@ EMBRYO_SITE = http://download.enlightenment.org/releases/
 EMBRYO_AUTORECONF = NO
 EMBRYO_INSTALL_STAGING = YES
 EMBRYO_INSTALL_TARGET = YES
-EMBRYO_DEPENDENCIES = host-pkg-config
+EMBRYO_DEPENDENCIES = host-pkg-config eina
 
 $(eval $(call AUTOTARGETS,package/efl,embryo))
 $(eval $(call AUTOTARGETS,package/efl,embryo,host))
