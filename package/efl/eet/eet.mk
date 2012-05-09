@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-EET_VERSION = 1.4.0
-EET_SOURCE = eet-$(EET_VERSION).tar.gz
+EET_VERSION = 1.6.0
+EET_SOURCE = eet-$(EET_VERSION).tar.bz2
 EET_SITE = http://download.enlightenment.org/releases/
 EET_AUTORECONF = NO
 EET_INSTALL_STAGING = YES
