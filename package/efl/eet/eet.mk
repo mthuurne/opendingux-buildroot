@@ -24,6 +24,10 @@ ifeq ($(BR2_PACKAGE_EET_TESTS),y)
 EET_CONF_OPT += --enable-tests
 endif
 
+ifeq ($(BR2_PACKAGE_LIBGCRYPT),y)
+EET_DEPENDENCIES += libgcrypt
+endif
+
 
 $(eval $(call AUTOTARGETS,package/efl,eet))
 $(eval $(call AUTOTARGETS,package/efl,eet,host))
