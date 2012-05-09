@@ -10,7 +10,7 @@ EET_SITE = http://download.enlightenment.org/releases/
 EET_AUTORECONF = NO
 EET_INSTALL_STAGING = YES
 EET_INSTALL_TARGET = YES
-EET_DEPENDENCIES = host-pkg-config
+EET_DEPENDENCIES = host-pkg-config eina zlib
 
 ifeq ($(BR2_PACKAGE_EET_EXAMPLES),y)
 EET_CONF_OPT += --enable-build-examples

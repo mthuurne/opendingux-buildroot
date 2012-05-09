@@ -1,6 +1,7 @@
 config BR2_PACKAGE_EET
 	bool "eet"
-	select BR2_PACKAGE_ZLIB 
+	select BR2_PACKAGE_ZLIB
+	select BR2_PACKAGE_EINA
 	help
 	  EET EFL library
 
