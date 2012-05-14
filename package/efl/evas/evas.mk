@@ -4,10 +4,10 @@
 #
 ################################################################################
 
-EVAS_VERSION = 1.0.0
-EVAS_SOURCE = evas-$(EVAS_VERSION).tar.gz
+EVAS_VERSION = 1.2.0
+EVAS_SOURCE = evas-$(EVAS_VERSION).tar.bz2
 EVAS_SITE = http://download.enlightenment.org/releases/
-EVAS_AUTORECONF = NO
+#EVAS_AUTORECONF = NO
 EVAS_INSTALL_STAGING = YES
 EVAS_INSTALL_TARGET = YES
 EVAS_DEPENDENCIES = host-pkg-config freetype eina

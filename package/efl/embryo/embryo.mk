@@ -4,13 +4,13 @@
 #
 ################################################################################
 
-EMBRYO_VERSION = 1.0.0
-EMBRYO_SOURCE = embryo-$(EMBRYO_VERSION).tar.gz
+EMBRYO_VERSION = 1.2.0
+EMBRYO_SOURCE = embryo-$(EMBRYO_VERSION).tar.bz2
 EMBRYO_SITE = http://download.enlightenment.org/releases/
 EMBRYO_AUTORECONF = NO
 EMBRYO_INSTALL_STAGING = YES
 EMBRYO_INSTALL_TARGET = YES
-EMBRYO_DEPENDENCIES = host-pkg-config
+EMBRYO_DEPENDENCIES = host-pkg-config eina
 
 $(eval $(call AUTOTARGETS,package/efl,embryo))
 $(eval $(call AUTOTARGETS,package/efl,embryo,host))
