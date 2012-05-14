@@ -8,6 +8,8 @@ fi
 
 if [ "$1" = "--on" ]; then
 	amixer set Speaker off
+
+	echo "$TV_VSYNC" > /sys/devices/platform/jz4740-fb/tv_out_vsync
 	tvout --$TV_NORM
 
 elif [ "$1" = "--off" ]; then
