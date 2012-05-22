@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00074-g1503ed8
-# Thu Apr 26 18:03:10 2012
+# Buildroot version: 2010.11-00097-gd562a55
+# Tue May 22 19:08:33 2012
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -165,7 +165,7 @@ BR2_GCC_SHARED_LIBGCC=y
 #
 # Gdb Options
 #
-# BR2_PACKAGE_GDB is not set
+BR2_PACKAGE_GDB=y
 BR2_PACKAGE_GDB_SERVER=y
 BR2_PACKAGE_GDB_HOST=y
 # BR2_GDB_VERSION_6_7_1 is not set
@@ -539,6 +539,7 @@ BR2_PACKAGE_PYTHON_ZLIB=y
 # BR2_PACKAGE_LIBARCHIVE is not set
 BR2_PACKAGE_LZO=y
 BR2_PACKAGE_ZLIB=y
+# BR2_PACKAGE_LIBZIP is not set
 
 #
 # Crypto
@@ -565,6 +566,7 @@ BR2_PACKAGE_LIBCONFUSE=y
 # BR2_PACKAGE_LIBFUSE is not set
 BR2_PACKAGE_LIBLOCKFILE=y
 BR2_PACKAGE_LIBSYSFS=y
+# BR2_PACKAGE_FUSEZIP is not set
 
 #
 # Graphics
