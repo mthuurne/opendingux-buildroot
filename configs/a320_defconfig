@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot version: 2010.11-00097-gd562a55
-# Tue May 22 19:08:33 2012
+# Buildroot version: 2010.11-00103-g6687ad8
+# Sat Jun 16 15:33:49 2012
 #
 BR2_HAVE_DOT_CONFIG=y
 # BR2_arm is not set
@@ -144,12 +144,12 @@ BR2_EXTRA_BINUTILS_CONFIG_OPTIONS=""
 # BR2_GCC_VERSION_4_2_4 is not set
 # BR2_GCC_VERSION_4_3_X is not set
 # BR2_GCC_VERSION_4_4_X is not set
-BR2_GCC_VERSION_4_5_X=y
+# BR2_GCC_VERSION_4_5_X is not set
 # BR2_GCC_VERSION_4_6_X is not set
-# BR2_GCC_VERSION_4_7_X is not set
+BR2_GCC_VERSION_4_7_X=y
 # BR2_GCC_VERSION_SNAP is not set
 BR2_GCC_SUPPORTS_FINEGRAINEDMTUNE=y
-BR2_GCC_VERSION="4.5.3"
+BR2_GCC_VERSION="4.7.1"
 BR2_EXTRA_GCC_CONFIG_OPTIONS=""
 # BR2_GCC_CROSS_OBJC is not set
 # BR2_GCC_CROSS_FORTRAN is not set
